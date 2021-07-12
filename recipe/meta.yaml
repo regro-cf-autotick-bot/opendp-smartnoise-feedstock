@@ -1,5 +1,5 @@
 {% set name = "opendp-smartnoise" %}
-{% set version = "0.1.4.1" %}
+{% set version = "0.1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opendp-smartnoise-{{ version }}.tar.gz
-  sha256: 12666c9c72e2fe6a29a1aa858e3d221448525c8ab9d1febe3dfc75737f8954ac
+  sha256: 37b98a777663d4c49837c5f03997f0c0c2503892ecb00766ba7d49ff6605ce3e
   patches:
     - 0001-fixed-imports.patch
 
@@ -43,11 +43,11 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "SmartNoise: Tools for Differential Privacy"
+  summary: 'SmartNoise: Tools for Differential Privacy'
 
 extra:
   recipe-maintainers:
     - d-cunningham
     - oblute
     - mxr-conda
-    
+
