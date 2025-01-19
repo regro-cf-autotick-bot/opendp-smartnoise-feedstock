@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opendp-smartnoise-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opendp-smartnoise-{{ version }}.tar.gz
   sha256: 37b98a777663d4c49837c5f03997f0c0c2503892ecb00766ba7d49ff6605ce3e
   patches:
     - 0001-fixed-imports.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - antlr4-python3-runtime
     - msrest
@@ -27,7 +27,7 @@ requirements:
     - opendp-smartnoise-core
     - pandas
     - pandasql
-    - python >=3.6
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - statsmodels
@@ -37,6 +37,7 @@ test:
     - opendp.smartnoise
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/opendp-smartnoise/
